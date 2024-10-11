@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
-from urllib2 import urlopen
+# from urllib2 import urlopen
+from urllib.request import urlopen
 from PIL import Image
 import traceback
 import threading
