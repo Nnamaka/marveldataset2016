@@ -44,7 +44,8 @@ def save_image(ID, justImage, outFolder):
     soup = BeautifulSoup(html, "lxml")
 
     images = [img for img in soup.findAll('img')]
-    image_links = [each.get('src') for each in images]
+    # image_links = [each.get('src') for each in images]
+    image_links = [each.get('src') for each in images if each.get('src') is not None]
     if not justImage:
         tags = [tr for tr in soup.findAll('td')]
         tr_text = [each.getText() for each in tags]
@@ -185,20 +186,6 @@ for eachLine in downloadContent:
 FINAL.close()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                  
 
 
 
