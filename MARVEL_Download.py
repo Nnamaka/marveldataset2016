@@ -54,6 +54,7 @@ def save_image(ID, justImage, outFolder):
     for each in image_links:
         if "http" in each and "jpg" in each and "photos/middle" in each:
             filename = each.split('/')[-1]
+            filename = filename.split('?')[0]
             req = Request(each, headers={'User-Agent': 'Mozilla/5.0'})
             f = urlopen(req, timeout=300)
             with open(os.path.join(outFolder, filename), "wb") as local_file:
